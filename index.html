@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Snake</title>
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0"/>
+		<meta charset="utf-8"/>
+        <meta name="description" content="A pure classic Snake game">
+        <meta name="keywords" content="snake, html5, jeu">
+        <meta name="author" content="Ahlem Essid">
+        <meta name="Robots" content="All" />
+        <link rel="icon" href="favicon.ico" type="image/x-icon" />
+        <link rel="SHORTCUT ICON" href="favicon.ico" type="image/x-icon" />
+
+        <!-- OpenGraph meta properties -->
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Snake" />
+        <meta property="og:description" content="A classic Snake game" />
+        <meta property="og:site_name" content="Snake" />
+        <link rel="image_src" href="img/favicon.png" />
+
+				<!-- CSS -->
+				<link href="css/style.css" rel="stylesheet"/>
+				<link href="css/normalize.css" rel="stylesheet"/>
+				<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+	</head>
+
+	<body id="main">
+    	<!-- Chargement du jeu -->
+        <div id="loader">
+          <h1 id="loader-title">Snake</h1>
+          <p id="loading-text">Chargement...</p>
+          <div id="bar-container">
+            <div id="bar"></div>
+          </div>
+        </div>
+        <!-- end loading screen -->
+
+        <!-- Main container -->
+        <div id="container">
+
+           <!-- Page header -->
+           <h1 class="animate__animated animate__bounceInDown">Snake</h1>
+           <h3>Game</h3>
+
+           <!-- end header -->
+
+           <div id="game-container">
+             <div id="canvas-container">
+               <!-- Canvas -->
+               <canvas id="canvas">Votre navigateur ne supporte pas HTML5 ! Veuillez mettre à jour votre navigateur.</canvas>
+
+               <!-- Canvas overlay box -->
+               <div id="canvas-overlay">
+                 <div id="overlay-inner">
+                   <span id="overlay-text" data-action="play">Prêt ?</span>
+
+                   <!-- Enregistrer les scores -->
+                   <div id="save">Enregistrer le score</div>
+                     <!-- Save score box inputs -->
+                     <div id="save-score-box">
+                       <div id="save-score-inner">
+                         <input type="text" id="save-name" placeholder="Nom">
+                         <input type="button" id="save-button" value="Enregistrer">
+                         <input type="button" id="cancel-button" value="Annuler">
+                       </div>
+                     </div>
+                     <!-- !end box inputs -->
+                  </div>
+                </div>
+                <!-- end overlay -->
+               </div>
+               <!-- end canvas container -->
+
+
+
+               <!-- Adding bonus score -->
+               <div class="bonus-text"></div>
+							 <div id="bar-selection">
+								 <!-- Score display -->
+								 <div id="score-container">
+									 <div id="score-text">Score</div>
+									 <div id="score-num">0</div>
+								 </div>
+
+								 <!-- Vitesse selection -->
+								 <div id="speed-container">
+									 <div id="speed-text">Vitesse</div>
+										 <input type="range" min="5" max="20" value="12" id="speed-fader">
+										 <div id="speed-labels">
+											 <span id="speed-min">Min</span>
+											 <span id="speed-max">Max</span>
+										 </div>
+								 </div>
+
+								 <!-- Border selection -->
+								 <div id="border-selection-container">
+									 <div id="border-text">Bords</div>
+										 <input type="checkbox" id="border-selector" name="border-selector" class="switch" />
+								 <label for="border-selector">Activer</label>
+								 </div>
+
+							 </div>
+
+           </div>
+
+            <!-- Instructions -->
+            <section id="instructions">
+           	<h2>Instructions</h2>
+            	<p>Sélectionnez la vitesse et jouez ! Utilisez les touches fléchées pour vous déplacer, ESC ou P pour mettre le jeu en pause. Plus la vitesse est faible, moins vous pouvez obtenir de points. Ne manquez pas les fruits ! <br>
+                <br>Si vous entrez en collision avec des bordures, vous perdrez la partie, mais vous pouvez choisir d'activer les bordures !</p>
+   		    	</section>
+
+					<!-- Classement recharge -->
+             <section>
+            	<h2>Classement</h2>
+             	<p id="standings-loader">
+            	  <img src="img/loader.gif" alt="Loading">
+               </p>
+                <div class="scrollable">
+        			 	<ul id="standing-list"></ul>
+                </div>
+    		    </section>
+
+        	<!-- Footer -->
+           <footer>
+
+           <p id="play-counter"></p>
+           <p>Réalisé par <a href="https://github.com/ahlemgit-prog" target="_blank">Ahlem Essid</a>
+						 <!-- Github image -->
+							<div>
+								<a href="https://github.com/ahlemgit-prog" target="_blank" class="github-ribbon">
+
+								 <p class="follow-text">Follow me on Github !</p>
+								 <img class="follow-img" src="img/github.svg" alt="Suivez-moi sur GitHub" height="38px" width="38px">
+								</a>
+							</div>
+						</p>
+           </footer>
+           <!-- end Footer -->
+		</div>
+       <!-- end container -->
+
+       <!-- Load scripts -->
+       <script src="js/jquery-2.1.4.min.js"></script>
+       <script src="js/modernizr-2.6.2.min.js"></script>
+       <script src="js/fastclick.js"></script>
+       <script src="js/jquery.touchSwipe.min.js"></script>
+       <script src="js/settings.js"></script>
+       <script src="js/script.js"></script>
+			 <script src="js/engine.js"></script>
+       <script src="js/loader.js"></script>
+
+	</body>
+</html>
