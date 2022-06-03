@@ -2,9 +2,11 @@
 
 *Snake Game.*
 
+![Snake](https://ahlemgit-prog.github.io/snakegame/screenshot.jpg)
+
 **[JOUEZ ICI SANS PLUS ATTENDRE](https://ahlemgit-prog.github.io/snakegame/)**
 
-## Input
+## ACTION
 
 <table>
   <tr>
